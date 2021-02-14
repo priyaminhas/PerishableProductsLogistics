@@ -1,8 +1,7 @@
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
-import PrivateRoute from './utils/privateRoute';
-import PublicRoute from './utils/publicRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -11,8 +10,11 @@ function App() {
       <div>
         <BrowserRouter>
           <Switch>
-            <PublicRoute path="/login" component={Login} />
-            <PrivateRoute  path="/dashboard" component={Dashboard} />
+          <Route path='/' exact component={Login} />
+          <Route path='/index' exact component={Login} />
+          <Route path='/login' exact component={Login} />
+          <Route path='/dashboard' exact component={Dashboard} />
+          <Route path='/dashboard/vaccine' exact component={Dashboard} />
           </Switch>
         </BrowserRouter>
       </div>      

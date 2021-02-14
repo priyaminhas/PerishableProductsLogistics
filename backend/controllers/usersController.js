@@ -25,5 +25,5 @@ exports.login = async (req, res) => {
 
     const userJWT = jwt.sign({ name }, process.env.PRIVATE_KEY, { algorithm: 'HS256' });
 
-    res.status(200).json({ userJWT, address: user.address });
+    res.status(200).json({ userJWT, address: user.address, userType: user.userType });
 }

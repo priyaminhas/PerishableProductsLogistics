@@ -20,6 +20,10 @@ const UserSchema = Schema({
         type: Date,
         required: true,
         default: new Date()
+    },
+    userType:{
+        type: Number, //1 -Admin, 2- Distributor, 3 - Manufacturer, 4 - Transporter
+        required: true
     }
 });
 
