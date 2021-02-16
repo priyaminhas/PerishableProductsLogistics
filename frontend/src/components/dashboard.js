@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { clearUserSession } from '../utils/common';
 import { useCookies } from 'react-cookie';
 import Vaccine from './vaccine';
 import '../dashboard.css';
 
 function Dashboard() {
     const history = useHistory();
-    const [cookies, setCookie] = useCookies();
+    const [cookies, setCookie, removeCookie] = useCookies();
    // console.log(cookies.userType);
+   useEffect(() => {
+       if(!cookies.userJWT || !cookies.address){
+           history.push('/login');
+       }
+   })
     const handleLogout = () => {
-        clearUserSession();
+        removeCookie('userJWT');
+        removeCookie('address');
+        removeCookie('userType');
         history.push('/login');
     }
     return(

@@ -13,7 +13,7 @@ const Login = () => {
        try{
             api.post('/users/login',{inputEmail, inputPassword}).then(res => {
                 if(res.status === 200){
-                    setCookie('distributorJWT', res.data.distributorJWT);
+                    setCookie('userJWT', res.data.userJWT);
                     setCookie('address', res.data.address);
                     setCookie('userType',res.data.userType);
                     history.push('/dashboard');

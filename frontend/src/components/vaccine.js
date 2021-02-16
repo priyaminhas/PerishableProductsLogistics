@@ -36,8 +36,6 @@ function Vaccine() {
                             <th>Serial No</th>
                             <th>Manufacturer</th>
                             <th>Thermal</th>
-                            <th>Header</th>
-                            <th>Header</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,8 +44,6 @@ function Vaccine() {
                             <td>{vaccine.serialNo}</td>
                             <td>{vaccine.manufacturer}</td>
                             <td>{vaccine.thermal} </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     ))}
                     </tbody>
